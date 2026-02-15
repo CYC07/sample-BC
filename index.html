@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js Blockchain UI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>My Simple Blockchain</h1>
+
+    <div class="main-container">
+        <!-- Left Panel for Actions & Status -->
+        <div class="left-panel">
+            <div class="actions">
+                <h2>Actions</h2>
+                <div class="form-group">
+                    <h3>Mine Custom Block</h3>
+                    <input type="text" id="blockData" placeholder="Enter custom block data">
+                    <button id="mineButton">Mine Block</button>
+                </div>
+                <div class="form-group">
+                    <h3>Tamper with a Block</h3>
+                    <input type="number" id="blockIndex" placeholder="Block Index to Tamper">
+                    <input type="text" id="tamperData" placeholder="New fraudulent data">
+                    <button id="tamperButton">Tamper Block</button>
+                </div>
+                <div class="form-group">
+                    <button id="validateButton">Validate Chain</button>
+                </div>
+            </div>
+
+            <div class="status-panel">
+                <h2>Status</h2>
+                <div id="status">Chain is ready.</div>
+            </div>
+        </div>
+
+        <!-- Right Panel for Chat Console -->
+        <div class="chat-console">
+            <h2>Transaction Chat</h2>
+            <div id="chatDisplay" class="chat-display">
+                <!-- Chat messages will appear here -->
+            </div>
+            <div class="chat-controls">
+                <select id="chatSender">
+                    <option value="A">User A</option>
+                    <option value="B">User B</option>
+                </select>
+                <input type="text" id="chatMessage" placeholder="Type your message...">
+                <button id="sendMessageButton">Send</button>
+            </div>
+            <button id="saveChatButton">Close & Save Chat to New Block</button>
+        </div>
+    </div>
+
+    <!-- Blockchain Display at the bottom -->
+    <div class="chain-container">
+        <h2>Current Blockchain</h2>
+        <div id="blockchain"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
